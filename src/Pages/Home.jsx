@@ -1,3 +1,4 @@
+import BreakingNews from '../components/Common/BreakingNews';
 import Header from '../components/Shared/Header';
 import Navbar from '../components/Shared/Navbar';
 import LeftSideNav from '../components/SideNav/LeftSideNav';
@@ -7,6 +8,7 @@ const Home = () => {
       return (
             <>
                  <Header></Header>
+                 <BreakingNews></BreakingNews>
                  <Navbar></Navbar>
                   
                   <section className='grid grid-cols-1 md:grid-cols-4 gap-6'>
