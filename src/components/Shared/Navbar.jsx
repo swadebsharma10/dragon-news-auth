@@ -1,6 +1,18 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+  const {logOut, user} = useContext(AuthContext);
+
+  const handleSignOut =()=>{
+    logOut()
+    .then()
+    .catch(error =>{
+      console.log(error.message)
+    })
+  }
   const navLinks = (
     <>
       <li>
@@ -68,9 +80,13 @@ const Navbar = () => {
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
           </div>
-          <Link to="/login">
+          {
+            user ?   <button onClick={handleSignOut} className="btn bg-gray-500 text-white px-6">SignOut</button>
+            :<Link to="/login">
             <button className="btn bg-gray-500 text-white px-6">Login</button>
           </Link>
+          }
+          
         </div>
       </div>
     </>
