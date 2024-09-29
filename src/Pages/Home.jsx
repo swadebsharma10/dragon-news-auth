@@ -9,7 +9,7 @@ import NewsCard from '../components/Common/NewsCard';
 const Home = () => {
 
       const news= useLoaderData();
-      console.log(news)
+     
 
       return (
             <>

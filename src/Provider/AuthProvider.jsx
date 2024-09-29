@@ -15,12 +15,12 @@ const AuthProvider = ({children}) => {
       }
 
       const loginUser = (email, password) =>{
-            setLoading(true)
+            setLoading(true);
             return signInWithEmailAndPassword(auth, email, password);
       }
 
       const logOut =()=>{
-            setLoading(true)
+            setLoading(true);
            return signOut(auth) ;
       }
 
@@ -30,7 +30,7 @@ const AuthProvider = ({children}) => {
         const unSubscribe =   onAuthStateChanged(auth, currentUser =>{
                   console.log('Observer', currentUser);
                   setUser(currentUser);
-                  setLoading(false)
+                  setLoading(false);
             });
 
             return ()=>{
